@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.activity_main.tabLayout
 import kotlinx.android.synthetic.main.activity_main.viewPager
 
 
-class MainActivity : CyaneaAppCompatActivity(), OnMenuItemClickListener {
+class DupMainActivity : CyaneaAppCompatActivity(), OnMenuItemClickListener {
 
   private lateinit var bottomDrawerBehavior: BottomSheetBehavior<View>
 
@@ -64,10 +64,6 @@ class MainActivity : CyaneaAppCompatActivity(), OnMenuItemClickListener {
   override fun onOptionsItemSelected(item: MenuItem?): Boolean = when (item?.itemId) {
     R.id.action_settings -> {
       startActivity(Intent(this, CyaneaSettingsActivity::class.java))
-      true
-    }
-    R.id.dup_main -> {
-      startActivity(Intent(this, DupMainActivity::class.java))
       true
     }
     else -> super.onOptionsItemSelected(item)

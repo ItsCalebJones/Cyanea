@@ -25,6 +25,9 @@
     <activity
         android:name=".activities.RecyclerViewActivity"
         android:theme="@style/AppTheme"/>
+    <activity
+        android:name=".activities.DupMainActivity"
+        android:theme="@style/AppTheme"/>
   </application>
 
 </manifest>

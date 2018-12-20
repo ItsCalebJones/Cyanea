@@ -3,64 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-  <TextView
-      android:id="@+id/cyaneaHeadline"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/margin_default"
-      android:layout_marginStart="@dimen/margin_default"
-      android:layout_marginTop="@dimen/margin_default"
-      android:fontFamily="@font/font_raleway_semibold"
-      android:text="@string/cyanea_headline"
-      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:targetApi="jelly_bean"
-      />
+    <TextView
+        android:id="@+id/cyaneaHeadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:fontFamily="@font/font_raleway_semibold"
+        android:text="@string/cyanea_headline"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="jelly_bean" />
 
-  <TextView
-      android:id="@+id/cyaneaSubtitle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="@dimen/margin_default"
-      android:layout_marginLeft="@dimen/margin_default"
-      android:layout_marginRight="@dimen/margin_default"
-      android:layout_marginStart="@dimen/margin_default"
-      android:layout_marginTop="@dimen/about_margin_top"
-      android:fontFamily="@font/font_raleway_light"
-      android:lineSpacingExtra="@dimen/about_line_spacing"
-      android:text="@string/cyanea_about"
-      android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/cyaneaHeadline"
-      tools:targetApi="jelly_bean"
-      />
+    <TextView
+        android:id="@+id/cyaneaSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginTop="@dimen/about_margin_top"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:fontFamily="@font/font_raleway_light"
+        android:lineSpacingExtra="@dimen/about_line_spacing"
+        android:text="@string/cyanea_about"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cyaneaHeadline"
+        tools:targetApi="jelly_bean" />
 
-  <FrameLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="@dimen/margin_default"
-      android:layout_marginLeft="@dimen/margin_default"
-      android:layout_marginRight="@dimen/margin_default"
-      android:layout_marginStart="@dimen/margin_default"
-      android:layout_marginTop="@dimen/margin_default"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/cyaneaSubtitle"
-      >
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cyaneaSubtitle">
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cyaneaTopics"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cyaneaTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:chipSpacing="@dimen/chip_spacing" />
+
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:chipSpacing="@dimen/chip_spacing"
-        />
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="?backgroundColor"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame">
 
-  </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:elevation="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Background Color"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/color_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:elevation="2dp"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:text="Test" />
+
+            <View
+                android:id="@+id/background_runtime"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

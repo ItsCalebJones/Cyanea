@@ -1,5 +1,6 @@
 package com.jaredrummler.cyanea.demo.fragments
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -9,7 +10,8 @@ import android.view.ViewGroup
 import com.google.android.material.chip.Chip
 import com.jaredrummler.cyanea.app.CyaneaFragment
 import com.jaredrummler.cyanea.demo.R
-import kotlinx.android.synthetic.main.fragment_about.cyaneaTopics
+import com.jaredrummler.cyanea.demo.activities.DupMainActivity
+import kotlinx.android.synthetic.main.fragment_about.*
 
 class AboutFragment : CyaneaFragment() {
 
@@ -19,6 +21,8 @@ class AboutFragment : CyaneaFragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     loadTopics()
+    color_text.text = String.format("#%06X", 0xFFFFFF and cyanea.backgroundColor)
+    background_runtime.setBackgroundColor(cyanea.backgroundColor)
   }
 
   private fun loadTopics() {
@@ -32,6 +36,8 @@ class AboutFragment : CyaneaFragment() {
       chip.text = text
       cyaneaTopics.addView(chip)
     }
+    cyaneaTopics.setOnClickListener {
+      requireActivity().startActivity(Intent(activity, DupMainActivity::class.java))
+    }
   }
-
 }
